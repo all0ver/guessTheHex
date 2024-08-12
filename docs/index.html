@@ -1,163 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Guess The Hex</title>
-    <link href="output.css" rel="stylesheet">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
-      body {
-        font-family: "Radio Canada Big", sans-serif;
-      }
-    </style>
-  </head>
-  <body class="min-h-screen bg-black text-white">
-    <header class="flex justify-center">
-      <h1 class="text-4xl p-2 font-bold">Guess The Hex</h1>
-    </header>
-    <div class="flex gap-16 ">
-    <div id="main" class="flex flex-col gap-6 items-center">
-      <div class="color h-52 w-52 m-10 rounded"></div>
-      <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p class="select-none">#</p>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guess The Hex</title>
+  <link href="output.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+
+    body {
+      font-family: "Radio Canada Big", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-black text-white">
+  <header class="flex justify-center">
+    <h1 class="text-4xl p-2 font-bold">Guess The Hex</h1>
+  </header>
+  <div class="flex gap-16 justify-center items-center max-[1100px]:flex-col">
+    <div id="main" class="flex flex-col gap-6 items-end">
+      <div class="flex flex-col gap-6 items-center">
+        <div class="color h-52 w-52 m-10 rounded max-[550px]:h-24 max-[550px]:w-24"></div>
+        <div class="guess text-5xl text-zinc-300 flex gap-4 items-center max-[550px]:text-3xl max-[550px]:gap-3">
+          <p class="select-none">#</p>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+        </div>
+        <div class="guess text-5xl text-zinc-300 flex gap-4 items-center max-[550px]:text-3xl max-[550px]:gap-3">
+          <p class="select-none">#</p>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+        </div>
+        <div class="guess text-5xl text-zinc-300 flex gap-4 items-center max-[550px]:text-3xl max-[550px]:gap-3">
+          <p class="select-none">#</p>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+        </div>
+        <div class="guess text-5xl text-zinc-300 flex gap-4 items-center max-[550px]:text-3xl max-[550px]:gap-3">
+          <p class="select-none">#</p>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+        </div>
+        <div class="guess text-5xl text-zinc-300 flex gap-4 items-center max-[550px]:text-3xl max-[550px]:gap-3">
+          <p class="select-none">#</p>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+        </div>
+        <div class="guess text-5xl text-zinc-300 flex gap-4 items-center max-[550px]:text-3xl max-[550px]:gap-3">
+          <p class="select-none">#</p>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+          <div
+            class="letter rounded bg-zinc-800 w-16 h-16 max-[550px]:w-10 max-[550px]:h-10 flex justify-center items-center text-center p-3 text-zinc-300">
+          </div>
+        </div>
+
       </div>
 
-      <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p class="select-none">#</p>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-      </div>
 
-      <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p class="select-none">#</p>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-      </div>
-
-      <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p class="select-none">#</p>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-      </div>
-
-      <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p class="select-none">#</p>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-      </div>
-
-      <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p class="select-none">
-        #
-        </p>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-       <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
-       </div>
-      </div>
-
-      
     </div>
-      <div class="legend flex items-center">
-          <ul class="flex flex-col gap-4">
-            <li class="flex items-center gap-4">
-              <div class="bg-[green] h-8 w-8 rounded">
-              </div>
-              <p>The character is at the right place</p>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="bg-[#dd8000] h-8 w-8 rounded">
-              </div>
-              <p>The character is not at the right place</p>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
-                <p class="text-zinc-300 text-xl">A</p>
-              </div>
-              <p>The character is not in the hex</p>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
-                <p class="text-[#F03366] text-xl">A</p>
-              </div>
-              <p>The character occurs twice</p>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
-                <p class="text-[#8A2BE2] text-xl">A</p>
-              </div>
-              <p>The character occurs three times</p>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
-                <p class="text-[#F0F418] text-xl">A</p>
-              </div>
-              <p>The character occurs four or more times</p>
-            </li>
-          </ul>
-      </div>
+    <div class="legend flex items-center">
+      <ul class="flex flex-col gap-4">
+        <li class="flex items-center gap-4">
+          <div class="bg-[green] h-8 w-8 rounded">
+          </div>
+          <p>The character is at the right place</p>
+        </li>
+        <li class="flex items-center gap-4">
+          <div class="bg-[#dd8000] h-8 w-8 rounded">
+          </div>
+          <p>The character is not at the right place</p>
+        </li>
+        <li class="flex items-center gap-4">
+          <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+            <p class="text-zinc-300 text-xl">A</p>
+          </div>
+          <p>The character is not in the hex</p>
+        </li>
+        <li class="flex items-center gap-4">
+          <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+            <p class="text-[#F03366] text-xl">A</p>
+          </div>
+          <p>The character occurs twice</p>
+        </li>
+        <li class="flex items-center gap-4">
+          <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+            <p class="text-[#8A2BE2] text-xl">A</p>
+          </div>
+          <p>The character occurs three times</p>
+        </li>
+        <li class="flex items-center gap-4">
+          <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+            <p class="text-[#F0F418] text-xl">A</p>
+          </div>
+          <p>The character occurs four or more times</p>
+        </li>
+      </ul>
     </div>
-    <script src="index.js"></script>
-  </body>
+  </div>
+  <script src="index.js"></script>
+</body>
+
 </html>
