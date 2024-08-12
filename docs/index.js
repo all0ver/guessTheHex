@@ -19,10 +19,8 @@ let round = 0;
 let letter = 0; 
 let playerAnswer = "#";
 body.addEventListener("keydown", (event) => {
-  console.log(letter);
   if (event.key == "Backspace" || event.key == "Delete") {
     if (letter >= 1) {
-      console.log("eoeo");
       input[round].children[letter].textContent = "";
       letter -= 1;
       playerAnswer = playerAnswer.slice(0, -1);
@@ -49,7 +47,6 @@ body.addEventListener("keydown", (event) => {
         console.log("You lost!");
       } else {
         for (let i = 0; i < 6; i++) {
-          console.log(playerAnswer[i+1]);
           if (answer.includes(playerAnswer[i+1])) {
             input[round].children[i+1].style.background = "#dd8000";
           }
