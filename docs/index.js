@@ -1,6 +1,5 @@
 const body = document.querySelector("body");
 const input = document.querySelectorAll(".guess");
-console.log(input);
 const colorDiv = document.querySelector(".color");
 const hex = ['1','2','3','4','5','6','7','8','9','0','A','B','C','D','E','F'];
 
@@ -28,18 +27,34 @@ body.addEventListener("keypress", (event) => {
     }
   } 
   console.log(round)
- if (event.key == "Enter" && round == 5 && letter == 6) {
-    console.log("You lost!");
-    console.log("The answer was"+answer);
-  } else if (event.key == "Enter" && letter == 6) {
+  if (event.key == "Enter" && letter == 6) {
     if (answer == playerAnswer) {
+      for (let i = 0; i < 6; i++) {
+        if (answer[i+1] == playerAnswer[i+1]) {
+          input[round].children[i+1].style.background = "green";
+        }
+      }
       console.log("You won!");
     } else {
-      console.log("next round!");
-      round += 1;
-      letter = 0;
-    } 
-  }})
+      if (round == 5) {
+        console.log("You lost!");
+      } else {
+        for (let i = 0; i < 6; i++) {
+          console.log(playerAnswer[i+1]);
+          if (answer.includes(playerAnswer[i+1])) {
+            input[round].children[i+1].style.background = "#dd8000";
+          }
+          if (answer[i+1] == playerAnswer[i+1]) {
+            input[round].children[i+1].style.background = "green";
+          }
+        }
+        playerAnswer = "#";
+        round += 1;
+        letter = 0;
+      }
+    }
+  }
+})
 }
 
 newGame();
