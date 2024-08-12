@@ -16,10 +16,11 @@
     <header class="flex justify-center">
       <h1 class="text-4xl p-2 font-bold">Guess The Hex</h1>
     </header>
+    <div class="flex gap-16 ">
     <div id="main" class="flex flex-col gap-6 items-center">
-      <div class="color h-64 w-64 m-10 rounded"></div>
+      <div class="color h-52 w-52 m-10 rounded"></div>
       <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p>#</p>
+        <p class="select-none">#</p>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
        </div>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
@@ -35,7 +36,7 @@
       </div>
 
       <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p>#</p>
+        <p class="select-none">#</p>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
        </div>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
@@ -51,7 +52,7 @@
       </div>
 
       <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p>#</p>
+        <p class="select-none">#</p>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
        </div>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
@@ -67,7 +68,7 @@
       </div>
 
       <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p>#</p>
+        <p class="select-none">#</p>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
        </div>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
@@ -83,7 +84,7 @@
       </div>
 
       <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p>#</p>
+        <p class="select-none">#</p>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
        </div>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
@@ -99,7 +100,9 @@
       </div>
 
       <div class="guess text-6xl text-zinc-300 flex gap-4">
-        <p>#</p>
+        <p class="select-none">
+        #
+        </p>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
        </div>
        <div class="letter rounded bg-zinc-800 w-16 h-16 text-5xl flex justify-center items-center text-center p-3 text-zinc-300">
@@ -114,6 +117,46 @@
        </div>
       </div>
 
+      
+    </div>
+      <div class="legend flex items-center">
+          <ul class="flex flex-col gap-4">
+            <li class="flex items-center gap-4">
+              <div class="bg-[green] h-8 w-8 rounded">
+              </div>
+              <p>The character is at the right place</p>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="bg-[#dd8000] h-8 w-8 rounded">
+              </div>
+              <p>The character is not at the right place</p>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+                <p class="text-zinc-300 text-xl">A</p>
+              </div>
+              <p>The character is not in the hex</p>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+                <p class="text-[#F03366] text-xl">A</p>
+              </div>
+              <p>The character occurs twice</p>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+                <p class="text-[#8A2BE2] text-xl">A</p>
+              </div>
+              <p>The character occurs three times</p>
+            </li>
+            <li class="flex items-center gap-4">
+              <div class="bg-zinc-800 h-8 w-8 rounded flex justify-center items-center">
+                <p class="text-[#F0F418] text-xl">A</p>
+              </div>
+              <p>The character occurs four or more times</p>
+            </li>
+          </ul>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

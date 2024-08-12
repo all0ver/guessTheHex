@@ -18,7 +18,16 @@ colorDiv.style.background = answer;
 let round = 0;
 let letter = 0; 
 let playerAnswer = "#";
-body.addEventListener("keypress", (event) => {
+body.addEventListener("keydown", (event) => {
+  console.log(letter);
+  if (event.key == "Backspace" || event.key == "Delete") {
+    if (letter >= 1) {
+      console.log("eoeo");
+      input[round].children[letter].textContent = "";
+      letter -= 1;
+      playerAnswer = playerAnswer.slice(0, -1);
+    }
+  }
   if (hex.includes(event.key.toUpperCase())) {
     if (letter < 6) {
       input[round].children[letter+1].textContent = event.key.toUpperCase();
@@ -26,7 +35,7 @@ body.addEventListener("keypress", (event) => {
       letter += 1;
     }
   } 
-  console.log(round)
+  
   if (event.key == "Enter" && letter == 6) {
     if (answer == playerAnswer) {
       for (let i = 0; i < 6; i++) {
