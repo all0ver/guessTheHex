@@ -36,16 +36,11 @@ body.addEventListener("keydown", (event) => {
   
   if (event.key == "Enter" && letter == 6) {
     if (answer == playerAnswer) {
-      for (let i = 0; i < 6; i++) {
-        if (answer[i+1] == playerAnswer[i+1]) {
-          input[round].children[i+1].style.background = "green";
-        }
-      }
-      console.log("You won!");
+      check(answer,playerAnswer, round);
+      end("You won!",answer);
     } else {
       if (round == 5) {
-        console.log("You lost!");
-      } else {
+        end("You lost!",answer);
         for (let i = 0; i < 6; i++) {
           if (answer.includes(playerAnswer[i+1])) {
             input[round].children[i+1].style.background = "#dd8000";
@@ -54,6 +49,8 @@ body.addEventListener("keydown", (event) => {
             input[round].children[i+1].style.background = "green";
           }
         }
+      } else {
+        check(answer, playerAnswer, round);
         playerAnswer = "#";
         round += 1;
         letter = 0;
@@ -63,4 +60,72 @@ body.addEventListener("keydown", (event) => {
 })
 }
 
+function end(state, answer) {
+  const mainDiv = document.createElement("div");
+  const contentDiv = document.createElement("div");
+  const h1 = document.createElement("h1");
+  const p = document.createElement("p");
+  const button = document.createElement("button");
+  const mainDivClasses = ['absolute','h-screen','w-screen','flex','justify-center','items-center','top-0'];
+  const contentDivClasses = ['w-1/2','h-96','bg-zinc-700','flex', 'flex-col','justify-center','items-center','rounded-xl'];
+  const h1Classes = ['text-4xl','font-bold'];
+  const buttonClasses = ['px-8','py-4','bg-blue-500', 'rounded'];
+  addManyClasses(mainDivClasses,mainDiv);
+  addManyClasses(contentDivClasses,contentDiv);
+  addManyClasses(h1Classes,h1);
+  addManyClasses(buttonClasses,button);
+  p.classList.add("p-4")
+  // adding elements
+  mainDiv.appendChild(contentDiv);
+  contentDiv.appendChild(h1);
+  contentDiv.appendChild(p);
+  contentDiv.appendChild(button);
+  h1.textContent = state;
+  p.textContent = "The answer was: "+answer;
+  button.textContent = "Play again";
+  button.addEventListener("click",() => {
+    mainDiv.remove();
+    newGame();
+  })
+
+  
+  body.appendChild(mainDiv);
+}
+end("won");
+
+function addManyClasses(classes, element) {
+  classes.forEach(className => {
+    element.classList.add(className)
+  });
+}
+
+function check(answer, playerAnswer, round) { 
+  for (let i = 0; i < 6; i++) {
+          if (answer.includes(playerAnswer[i+1])) {
+            input[round].children[i+1].style.background = "#dd8000";
+          }
+          if (answer[i+1] == playerAnswer[i+1]) {
+            input[round].children[i+1].style.background = "green";
+          }
+          let repeat = 0;
+          for (let j = 0; j < 6; j++) {
+            if (playerAnswer[i+1] == answer[j+1]) {
+              repeat += 1;
+            }
+           }
+          switch (repeat) {
+            case 2:
+              input[round].children[i+1].style.color = "#F03366"; 
+              break;
+            case 3:
+              input[round].children[i+1].style.color = "#8A2BE2"; 
+              break;
+            case 4:
+              input[round].children[i+1].style.color = "F0F418"; 
+              break;
+            default:
+              break;
+          }
+        }
+}
 newGame();
