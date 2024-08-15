@@ -12,52 +12,57 @@ function randomHex() {
   return color;
 }
 
+
+let activeGameListener; 
+
 function newGame() {
-let answer = randomHex();
-colorDiv.style.background = answer;
-let round = 0;
-let letter = 0; 
-let playerAnswer = "#";
-body.addEventListener("keydown", (event) => {
-  if (event.key == "Backspace" || event.key == "Delete") {
-    if (letter >= 1) {
-      input[round].children[letter].textContent = "";
-      letter -= 1;
-      playerAnswer = playerAnswer.slice(0, -1);
-    }
+  let answer = randomHex();
+  colorDiv.style.background = answer;
+  let round = 0;
+  let letter = 0; 
+  let playerAnswer = "#";
+
+  if (activeGameListener) {
+    body.removeEventListener("keydown", activeGameListener);
   }
-  if (hex.includes(event.key.toUpperCase())) {
-    if (letter < 6) {
-      input[round].children[letter+1].textContent = event.key.toUpperCase();
-      playerAnswer += event.key.toUpperCase();
-      letter += 1;
+
+  function handleKeyPress(event) {
+    if (event.key == "Backspace" || event.key == "Delete") {
+      if (letter >= 1) {
+        input[round].children[letter].textContent = "";
+        letter -= 1;
+        playerAnswer = playerAnswer.slice(0, -1);
+      }
     }
-  } 
-  
-  if (event.key == "Enter" && letter == 6) {
-    if (answer == playerAnswer) {
-      check(answer,playerAnswer, round);
-      end("You won!",answer);
-    } else {
-      if (round == 5) {
-        end("You lost!",answer);
-        for (let i = 0; i < 6; i++) {
-          if (answer.includes(playerAnswer[i+1])) {
-            input[round].children[i+1].style.background = "#dd8000";
-          }
-          if (answer[i+1] == playerAnswer[i+1]) {
-            input[round].children[i+1].style.background = "green";
-          }
-        }
-      } else {
+    if (hex.includes(event.key.toUpperCase())) {
+      if (letter < 6) {
+        input[round].children[letter + 1].textContent = event.key.toUpperCase();
+        playerAnswer += event.key.toUpperCase();
+        letter += 1;
+      }
+    } 
+    
+    if (event.key == "Enter" && letter == 6) {
+      if (answer == playerAnswer) {
         check(answer, playerAnswer, round);
-        playerAnswer = "#";
-        round += 1;
-        letter = 0;
+        end("You won!", answer);
+      } else {
+        if (round == 5) {
+          end("You lost!", answer);
+          check(answer, playerAnswer, round);
+        } else {
+          check(answer, playerAnswer, round);
+          round += 1;
+          letter = 0;
+          playerAnswer = "#";
+        }
       }
     }
   }
-})
+
+  activeGameListener = handleKeyPress;
+
+  body.addEventListener("keydown", activeGameListener);
 }
 
 function end(state, answer) {
@@ -75,7 +80,6 @@ function end(state, answer) {
   addManyClasses(h1Classes,h1);
   addManyClasses(buttonClasses,button);
   p.classList.add("p-4")
-  // adding elements
   mainDiv.appendChild(contentDiv);
   contentDiv.appendChild(h1);
   contentDiv.appendChild(p);
@@ -85,13 +89,21 @@ function end(state, answer) {
   button.textContent = "Play again";
   button.addEventListener("click",() => {
     mainDiv.remove();
-    newGame();
+    clear();
+    newGame();    
   })
 
-  
   body.appendChild(mainDiv);
 }
-end("won");
+
+function clear() {
+  for (let i = 0; i < 6;i++) {
+    for (let j = 1; j <= 6; j++) {
+      input[i].children[j].textContent = "";
+      input[i].children[j].style.background = "#27272a";
+    }
+  }
+}
 
 function addManyClasses(classes, element) {
   classes.forEach(className => {
